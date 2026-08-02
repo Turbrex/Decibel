@@ -7,6 +7,9 @@
 <meta name="description" content="Get in touch with Decibel Distribution — demo submissions, booking, press, and all our social channels.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230a0908%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%23e21a2c%22 text-anchor=%22middle%22 font-family=%22Arial Black%22>D</text></svg>">
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/require-auth.js"></script>
 </head>
 <body>
 
@@ -23,6 +26,7 @@
       <a href="merch.html">Merch</a>
       <a href="contact.html" class="active">Contact / Socials</a>
       <a href="merch.html" class="cart-badge" aria-label="Cart">CART (<span id="cart-count">0</span>)</a>
+      <a href="#" class="cart-badge" data-logout aria-label="Log out">LOG OUT</a>
     </div>
   </nav>
 </header>

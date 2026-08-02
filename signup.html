@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — Decibel Distribution</title>
+<meta name="description" content="Create an account for Decibel Distribution.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230a0908%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%23e21a2c%22 text-anchor=%22middle%22 font-family=%22Arial Black%22>D</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/redirect-if-auth.js"></script>
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="card auth-card">
+    <div class="auth-logo">
+      <a href="login.html" class="logo">DECIBEL<span class="dot">.</span></a>
+    </div>
+    <h1>Join The Label</h1>
+    <p class="auth-sub">Create an account to get in.</p>
+
+    <div class="auth-error"></div>
+    <div class="auth-success"></div>
+
+    <form id="signup-form">
+      <div class="form-row">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" name="email" required autocomplete="email">
+      </div>
+      <div class="form-row">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" name="password" required minlength="8" autocomplete="new-password">
+      </div>
+      <div class="form-row">
+        <label for="signup-confirm">Confirm Password</label>
+        <input type="password" id="signup-confirm" name="confirm" required minlength="8" autocomplete="new-password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+    </form>
+
+    <p class="auth-footer">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+</div>
+
+<script src="assets/js/signup-form.js"></script>
+</body>
+</html>
