@@ -658,6 +658,62 @@ section { position: relative; padding: 5rem 0; }
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* =========================== PRICING CARDS =========================== */
+.price-card {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.price-card.featured { border-color: var(--accent); }
+.price-card.featured::before {
+  content: 'POPULAR';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--accent);
+  color: #0a0908;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+}
+.price-name {
+  font-family: var(--font-nav);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+}
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.price-features {
+  list-style: none;
+  margin-bottom: 1.75rem;
+  flex: 1;
+}
+.price-features li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.price-features li:last-child { border-bottom: none; }
+.price-features li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
 /* =========================== AUTH PAGES =========================== */
 .auth-shell {
   min-height: 100vh;

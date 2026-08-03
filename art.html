@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quan's Art — Album Cover Commissions — Decibel Distribution</title>
+<meta name="description" content="Commission custom album cover art from Quan — single covers, EP/album packages, and full visual bundles for your next release.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230a0908%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%23e21a2c%22 text-anchor=%22middle%22 font-family=%22Arial Black%22>D</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/require-auth.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">DECIBEL<span class="dot">.</span>
+      <small>DISTRIBUTION</small>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="merch.html">Merch</a>
+      <a href="art.html" class="active">Quan's Art</a>
+      <a href="contact.html">Contact / Socials</a>
+      <a href="merch.html" class="cart-badge" aria-label="Cart">CART (<span id="cart-count">0</span>)</a>
+      <a href="#" class="cart-badge" data-logout aria-label="Log out">LOG OUT</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="eyebrow">Cover Art Commissions</div>
+    <h1>Quan's Art</h1>
+    <p>Custom album, EP, and single cover art — dark, gritty visuals built to hit as hard as the music. Commissioned directly from Quan, the label's in-house artist.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="eyebrow">Portfolio</div>
+    <h2 class="section-heading">Recent Work</h2>
+    <p class="section-lead">A sample of cover art and label visuals — every piece built around the track, not a template.</p>
+
+    <div class="grid grid-3">
+
+      <div class="card">
+        <div class="release-art" style="background:linear-gradient(135deg,#3a0d12,#0a0908);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ece6da" stroke-width="1.3"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4 0-1.1.9-2 2-2h2.3c1.8 0 3.2-1.4 3.2-3.2C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="10.5" r="1.1" fill="#e21a2c" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="#c9a227" stroke="none"/><circle cx="14.5" cy="7.5" r="1.1" fill="#ece6da" stroke="none"/></svg>
+        </div>
+        <div class="release-body">
+          <div class="release-cat">ALBUM COVER</div>
+          <div class="release-title">Concrete Requiem</div>
+          <div class="release-artist">for Kilo Ghost</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="release-art" style="background:linear-gradient(135deg,#241d08,#0a0908);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ece6da" stroke-width="1.3"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4 0-1.1.9-2 2-2h2.3c1.8 0 3.2-1.4 3.2-3.2C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="10.5" r="1.1" fill="#e21a2c" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="#c9a227" stroke="none"/><circle cx="14.5" cy="7.5" r="1.1" fill="#ece6da" stroke="none"/></svg>
+        </div>
+        <div class="release-body">
+          <div class="release-cat">EP COVER</div>
+          <div class="release-title">Night Freight</div>
+          <div class="release-artist">for Reyna Vox</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="release-art" style="background:linear-gradient(135deg,#0d2a1f,#0a0908);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ece6da" stroke-width="1.3"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4 0-1.1.9-2 2-2h2.3c1.8 0 3.2-1.4 3.2-3.2C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="10.5" r="1.1" fill="#e21a2c" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="#c9a227" stroke="none"/><circle cx="14.5" cy="7.5" r="1.1" fill="#ece6da" stroke="none"/></svg>
+        </div>
+        <div class="release-body">
+          <div class="release-cat">VINYL LABEL ART</div>
+          <div class="release-title">Low Beam</div>
+          <div class="release-artist">for Sable &amp; Nine</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="release-art" style="background:linear-gradient(135deg,#241030,#0a0908);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ece6da" stroke-width="1.3"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4 0-1.1.9-2 2-2h2.3c1.8 0 3.2-1.4 3.2-3.2C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="10.5" r="1.1" fill="#e21a2c" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="#c9a227" stroke="none"/><circle cx="14.5" cy="7.5" r="1.1" fill="#ece6da" stroke="none"/></svg>
+        </div>
+        <div class="release-body">
+          <div class="release-cat">CUSTOM COMMISSION</div>
+          <div class="release-title">Static &amp; Smoke</div>
+          <div class="release-artist">for Dutch Mercer</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="release-art" style="background:linear-gradient(135deg,#1c1614,#0a0908);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ece6da" stroke-width="1.3"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4 0-1.1.9-2 2-2h2.3c1.8 0 3.2-1.4 3.2-3.2C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="10.5" r="1.1" fill="#e21a2c" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="#c9a227" stroke="none"/><circle cx="14.5" cy="7.5" r="1.1" fill="#ece6da" stroke="none"/></svg>
+        </div>
+        <div class="release-body">
+          <div class="release-cat">PROMO ART</div>
+          <div class="release-title">Tour Poster Set</div>
+          <div class="release-artist">Label Series</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="release-art" style="background:linear-gradient(135deg,#3a0d12,#0a0908);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ece6da" stroke-width="1.3"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4 0-1.1.9-2 2-2h2.3c1.8 0 3.2-1.4 3.2-3.2C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="10.5" r="1.1" fill="#e21a2c" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="#c9a227" stroke="none"/><circle cx="14.5" cy="7.5" r="1.1" fill="#ece6da" stroke="none"/></svg>
+        </div>
+        <div class="release-body">
+          <div class="release-cat">SINGLE COVER</div>
+          <div class="release-title">Open Commission Slot</div>
+          <div class="release-artist">Your Project Here</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="eyebrow">Book Quan</div>
+    <h2 class="section-heading">Packages</h2>
+    <p class="section-lead">Pick a starting point — every package can be customized to your project in the request form below.</p>
+
+    <div class="grid grid-3">
+
+      <div class="card price-card">
+        <div class="price-name">Single Cover</div>
+        <div class="price-amount">$75</div>
+        <ul class="price-features">
+          <li>1 concept direction</li>
+          <li>1 revision round</li>
+          <li>Digital delivery (JPG/PNG, 3000×3000)</li>
+          <li>7-10 day turnaround</li>
+        </ul>
+        <a href="#request" class="btn btn-ghost btn-block">Request This</a>
+      </div>
+
+      <div class="card price-card featured">
+        <div class="price-name">EP / Album Cover</div>
+        <div class="price-amount">$150</div>
+        <ul class="price-features">
+          <li>2 concept directions</li>
+          <li>3 revision rounds</li>
+          <li>Front cover + back layout guide</li>
+          <li>Print-ready CMYK files included</li>
+          <li>5-7 day turnaround</li>
+        </ul>
+        <a href="#request" class="btn btn-primary btn-block">Request This</a>
+      </div>
+
+      <div class="card price-card">
+        <div class="price-name">Full Visual Package</div>
+        <div class="price-amount">$300</div>
+        <ul class="price-features">
+          <li>Cover art + 3 promo/social variants</li>
+          <li>Vinyl label art included</li>
+          <li>Unlimited revisions (30 days)</li>
+          <li>Priority 5-day turnaround</li>
+        </ul>
+        <a href="#request" class="btn btn-ghost btn-block">Request This</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="request">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div>
+        <div class="eyebrow">Request Art</div>
+        <h2 class="section-heading" style="font-size:clamp(1.8rem,4vw,2.6rem);">Start A Commission</h2>
+        <p class="section-lead" style="margin-bottom:1.5rem;">Fill out the brief and it'll open a pre-filled email to Quan directly. Include reference links, mood boards, or past covers you like — the more context, the better the first concept.</p>
+
+        <div class="card info-card">
+          <h3>Direct Contact</h3>
+          <a href="mailto:art@decibeldistribution.com">art@decibeldistribution.com</a>
+        </div>
+        <div class="card info-card">
+          <h3>Turnaround</h3>
+          <p>5-10 days depending on package, rush requests considered case-by-case.</p>
+        </div>
+        <div class="card info-card">
+          <h3>Payment</h3>
+          <p>50% deposit to start, balance due on final delivery.</p>
+        </div>
+      </div>
+
+      <div class="card form-card">
+        <h3 style="font-size:1.4rem; text-transform:uppercase; font-family:var(--font-display); margin-bottom:0.35rem;">Commission Brief</h3>
+        <p style="color:var(--muted); font-size:0.9rem; margin-bottom:1.5rem;">This opens a pre-filled email in your mail client — nothing is stored or charged automatically.</p>
+        <form id="art-request-form">
+          <div class="form-row">
+            <label for="art-name">Name</label>
+            <input type="text" id="art-name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="art-email">Email</label>
+            <input type="email" id="art-email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="art-project">Project / Artist Name</label>
+            <input type="text" id="art-project" name="project" required>
+          </div>
+          <div class="form-row">
+            <label for="art-package">Package</label>
+            <select id="art-package" name="package">
+              <option>Single Cover — $75</option>
+              <option>EP / Album Cover — $150</option>
+              <option>Full Visual Package — $300</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="art-brief">Brief / References</label>
+            <textarea id="art-brief" name="brief" placeholder="Describe the sound, mood, and any reference links or mood boards..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Brief</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">DECIBEL<span class="dot">.</span></a>
+        <p>Independent hip-hop &amp; trap label and distribution house. Underground &amp; uncut since day one.</p>
+        <div class="footer-social">
+          <a class="social-icon" href="https://instagram.com/decibeldistribution" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a class="social-icon" href="https://x.com/decibeldistro" aria-label="X (Twitter)" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22H16.6l-5.2-6.8L5.4 22H2.3l8.1-9.3L1.4 2h6.9l4.7 6.2L18.9 2zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20z"/></svg>
+          </a>
+          <a class="social-icon" href="https://youtube.com/@decibeldistribution" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.4-.4-5a2.8 2.8 0 0 0-2-2C17.9 4.5 12 4.5 12 4.5s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2C2 8.6 2 12 2 12s0 3.4.4 5a2.8 2.8 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2c.4-1.6.4-5 .4-5zM10 15.4V8.6l6 3.4z"/></svg>
+          </a>
+          <a class="social-icon" href="https://tiktok.com/@decibeldistribution" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.2v13.8a2.9 2.9 0 1 1-2.1-2.8v-3.3a6.2 6.2 0 1 0 5.3 6.1V9.1a7.4 7.4 0 0 0 4.4 1.4V7.3a4.3 4.3 0 0 1-4.4-4.3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="merch.html">Merch</a>
+        <a href="art.html">Quan's Art</a>
+        <a href="contact.html">Contact / Socials</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@decibeldistribution.com">info@decibeldistribution.com</a>
+        <a href="mailto:art@decibeldistribution.com">art@decibeldistribution.com</a>
+        <a href="contact.html">Full contact page →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Decibel Distribution. All rights reserved.</span>
+      <span>Underground &amp; Uncut</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/art-form.js"></script>
+</body>
+</html>
