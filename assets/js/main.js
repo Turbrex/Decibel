@@ -101,7 +101,7 @@ function initContactForm() {
     const body = encodeURIComponent(
       `Name: ${form.querySelector('#cf-name')?.value || ''}\nEmail: ${form.querySelector('#cf-email')?.value || ''}\n\n${form.querySelector('#cf-message')?.value || ''}`
     );
-    window.location.href = `mailto:info@decibeldistribution.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@decibel.band?subject=${subject}&body=${body}`;
     form.reset();
   });
 }

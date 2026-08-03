@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `Name: ${name}\nEmail: ${email}\nProject / Artist: ${project}\nPackage: ${pkg}\n\nBrief:\n${brief}`
     );
 
-    window.location.href = `mailto:art@decibeldistribution.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:art@decibel.band?subject=${subject}&body=${body}`;
 
     if (typeof showToast === 'function') {
       showToast('Brief drafted in your email client');
