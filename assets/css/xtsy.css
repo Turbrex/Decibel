@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --xtsy-pink: #ff2bd6;
+  --xtsy-pink-dim: #7a1568;
+  --xtsy-pink-soft: #ff8ae9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #000;
+  color: var(--xtsy-pink);
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+}
+
+/* asterisk field: fixed so it covers the full viewport regardless of content height */
+.xtsy-asterisk-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.bg-asterisk {
+  position: absolute;
+  font-family: 'Anton', sans-serif;
+  line-height: 1;
+  user-select: none;
+}
+
+/* the gif, tucked into the texture rather than announced */
+.xtsy-blend-gif {
+  position: fixed;
+  bottom: 6%;
+  right: 4%;
+  width: min(260px, 30vw);
+  opacity: 0.14;
+  filter: grayscale(1) brightness(1.4);
+  mix-blend-mode: screen;
+  transform: rotate(-8deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.xtsy-lock-screen,
+.xtsy-reveal {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+}
+
+.xtsy-lock-screen {
+  border: 1px solid var(--xtsy-pink-dim);
+  background: rgba(10, 0, 8, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 3rem 2.25rem;
+  box-shadow: 0 0 60px rgba(255, 43, 214, 0.15);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.xtsy-lock-screen.unlocked-out {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.xtsy-lock-mark {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 24px rgba(255, 43, 214, 0.6);
+  margin-bottom: 0.5rem;
+}
+.xtsy-lock-sub {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--xtsy-pink-soft);
+  margin-bottom: 2.25rem;
+}
+
+.xtsy-lock-screen form { display: flex; flex-direction: column; gap: 1rem; }
+
+#xtsy-password {
+  background: #000;
+  border: 1px solid var(--xtsy-pink-dim);
+  color: var(--xtsy-pink);
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+#xtsy-password:focus {
+  outline: none;
+  border-color: var(--xtsy-pink);
+  box-shadow: 0 0 16px rgba(255, 43, 214, 0.35);
+}
+#xtsy-password::placeholder { color: var(--xtsy-pink-dim); }
+
+.xtsy-lock-screen button {
+  background: var(--xtsy-pink);
+  color: #000;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.xtsy-lock-screen button:hover { opacity: 0.85; }
+.xtsy-lock-screen button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.xtsy-lock-error {
+  display: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: -0.25rem;
+}
+.xtsy-lock-error.show { display: block; }
+
+@keyframes xtsy-shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-8px); }
+  40%, 60% { transform: translateX(8px); }
+}
+.xtsy-lock-screen.shake { animation: xtsy-shake 0.5s; }
+
+/* ---------- revealed content ---------- */
+.xtsy-reveal {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.xtsy-reveal.show { display: block; opacity: 1; }
+
+.xtsy-hero { margin-bottom: 2rem; }
+.xtsy-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 40px rgba(255, 43, 214, 0.55);
+}
+.xtsy-title .pink-star { display: inline-block; animation: xtsy-spin 6s linear infinite; }
+@keyframes xtsy-spin { to { transform: rotate(360deg); } }
+
+.xtsy-tag {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+  color: var(--xtsy-pink-soft);
+}
+
+.xtsy-embed-card {
+  border: 1px solid var(--xtsy-pink-dim);
+  padding: 1rem;
+  box-shadow: 0 0 40px rgba(255, 43, 214, 0.12);
+  margin-bottom: 1.5rem;
+}
+
+.xtsy-note {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--xtsy-pink-soft);
+  margin-bottom: 1.5rem;
+}
+
+.xtsy-back {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--xtsy-pink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--xtsy-pink-dim);
+  padding-bottom: 2px;
+}
+.xtsy-back:hover { color: #fff; border-color: #fff; }
+
+@media (max-width: 520px) {
+  .xtsy-lock-screen { padding: 2.25rem 1.5rem; }
+}
