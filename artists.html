@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events — Decibel Distribution</title>
-<meta name="description" content="Upcoming shows, release parties, and label events from Decibel Distribution.">
+<title>Artists — Decibel Distribution</title>
+<meta name="description" content="The artists Decibel Distribution manages and markets.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230a0908%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 fill=%22%23e21a2c%22 text-anchor=%22middle%22 font-family=%22Arial Black%22>D</text></svg>">
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -25,8 +25,8 @@
       <a href="index.html">Home</a>
       <a href="merch.html">Merch</a>
       <a href="art.html">Quan's Art</a>
-      <a href="events.html" class="active">Events</a>
-      <a href="artists.html">Artists</a>
+      <a href="events.html">Events</a>
+      <a href="artists.html" class="active">Artists</a>
       <a href="contact.html">Contact / Socials</a>
       <a href="merch.html" class="cart-badge" aria-label="Cart">CART (<span id="cart-count">0</span>)</a>
       <a href="#" class="cart-badge" data-logout aria-label="Log out">LOG OUT</a>
@@ -36,67 +36,28 @@
 
 <section class="page-header">
   <div class="container">
-    <div class="eyebrow">Live &amp; Shows</div>
-    <h1>Events<span id="admin-page-badge" class="admin-badge" style="display:none;">Admin</span></h1>
-    <p>Release parties, showcases, and label events — pulled straight from the calendar below.</p>
+    <div class="eyebrow">The Roster</div>
+    <h1>Artists</h1>
+    <p>The artists Decibel Distribution manages and markets — press play below.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
+    <div class="grid grid-3">
 
-    <div class="card admin-panel" id="admin-event-panel">
-      <h3>Create Event</h3>
-      <p class="form-note" style="margin-bottom:1.25rem;">Only visible to admin accounts. Publishing an event also posts it to Discord if a webhook is configured below.</p>
-      <form id="event-form">
-        <div class="grid grid-2">
-          <div class="form-row">
-            <label for="event-title">Title</label>
-            <input type="text" id="event-title" name="title" required>
-          </div>
-          <div class="form-row">
-            <label for="event-date">Date &amp; Time</label>
-            <input type="datetime-local" id="event-date" name="date" required>
-          </div>
+      <div class="card artist-card">
+        <div class="artist-card-header">
+          <div class="eyebrow">Label Artist</div>
+          <h3 class="artist-name">xtsy*</h3>
         </div>
-        <div class="grid grid-2">
-          <div class="form-row">
-            <label for="event-location">Location</label>
-            <input type="text" id="event-location" name="location" placeholder="Venue, city">
-          </div>
-          <div class="form-row">
-            <label for="event-link">Link (RSVP / tickets)</label>
-            <input type="url" id="event-link" name="link" placeholder="https://">
-          </div>
+        <div class="artist-embed">
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5spNfNcEgssXmB1893yRLN?utm_source=generator&theme=0&si=bdea989175164ffd" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
-        <div class="form-row">
-          <label for="event-description">Description</label>
-          <textarea id="event-description" name="description" placeholder="Optional details..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Create Event</button>
-      </form>
+        <a href="https://open.spotify.com/artist/5spNfNcEgssXmB1893yRLN" target="_blank" rel="noopener" class="release-link">Open in Spotify &rarr;</a>
+      </div>
+
     </div>
-
-    <div class="card admin-panel" id="admin-webhook-panel">
-      <h3>Discord Webhook</h3>
-      <p class="form-note" style="margin-bottom:1.25rem;">New events post here automatically. Only admins can view or change this.</p>
-      <form id="webhook-form">
-        <div class="form-row">
-          <label for="webhook-url">Webhook URL</label>
-          <input type="url" id="webhook-url" name="webhook" placeholder="https://discord.com/api/webhooks/...">
-        </div>
-        <button type="submit" class="btn btn-ghost">Save Webhook</button>
-        <p class="webhook-note">Discord: Server Settings → Integrations → Webhooks → New Webhook → Copy URL.</p>
-      </form>
-    </div>
-
-    <div class="eyebrow">Calendar</div>
-    <h2 class="section-heading">Upcoming Events</h2>
-
-    <div class="empty-state" id="events-empty">No events scheduled yet — check back soon.</div>
-
-    <div class="grid grid-3" id="events-list"></div>
-
   </div>
 </section>
 
@@ -145,6 +106,5 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
-<script src="assets/js/events.js"></script>
 </body>
 </html>

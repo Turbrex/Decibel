@@ -30,7 +30,7 @@ jobs:
       - name: Prepare site directory
         run: |
           mkdir -p dist
-          cp index.html contact.html merch.html art.html events.html login.html signup.html CNAME dist/
+          cp index.html contact.html merch.html art.html events.html artists.html login.html signup.html CNAME dist/
           cp -r assets dist/
 
       - name: Upload site

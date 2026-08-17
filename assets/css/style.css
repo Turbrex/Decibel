@@ -117,8 +117,9 @@ section { position: relative; padding: 5rem 0; }
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  max-width: 1180px;
+  max-width: 1340px;
   margin: 0 auto;
+  gap: 1.5rem;
 }
 
 .logo {
@@ -143,12 +144,13 @@ section { position: relative; padding: 5rem 0; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 1.5rem;
   font-family: var(--font-nav);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
@@ -156,6 +158,7 @@ section { position: relative; padding: 5rem 0; }
   padding: 0.25rem 0;
   color: var(--fg);
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 .nav-links a:hover,
 .nav-links a.active { color: var(--accent); }
@@ -169,10 +172,12 @@ section { position: relative; padding: 5rem 0; }
 
 .cart-badge {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   border: 1px solid var(--border-hi);
-  padding: 0.35rem 0.65rem;
+  padding: 0.35rem 0.6rem;
   border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
   display: inline-flex;
   gap: 0.4rem;
   align-items: center;
@@ -714,6 +719,23 @@ section { position: relative; padding: 5rem 0; }
   flex-shrink: 0;
 }
 
+/* =========================== ARTISTS =========================== */
+.artist-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.artist-card-header { margin-bottom: -0.25rem; }
+.artist-name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  margin-top: 0.3rem;
+}
+.artist-embed iframe { display: block; width: 100%; }
+
 /* =========================== EVENTS =========================== */
 .event-card {
   padding: 1.5rem 1.75rem;
@@ -856,7 +878,10 @@ section { position: relative; padding: 5rem 0; }
   .hero-scratch { display: none; }
 }
 
-@media (max-width: 640px) {
+/* Six nav items plus Cart/Log Out badges no longer fit a horizontal bar
+   below ~1050px, so the hamburger menu takes over earlier than the other
+   layout reflow breakpoints below. */
+@media (max-width: 1050px) {
   .nav-links {
     position: fixed;
     top: 68px; left: 0; right: 0;
@@ -872,6 +897,9 @@ section { position: relative; padding: 5rem 0; }
   .nav-links.open { transform: translateY(0); }
   .nav-links a, .nav-links .cart-badge { padding: 0.75rem 0; width: 100%; }
   .nav-toggle { display: flex; }
+}
+
+@media (max-width: 640px) {
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .social-list { grid-template-columns: 1fr; }
