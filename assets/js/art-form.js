@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#art-request-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     const name = form.querySelector('#art-name').value.trim();
     const email = form.querySelector('#art-email').value.trim();
@@ -11,16 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const pkg = form.querySelector('#art-package').value;
     const brief = form.querySelector('#art-brief').value.trim();
 
-    const subject = encodeURIComponent(`Cover Art Commission — ${project}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nProject / Artist: ${project}\nPackage: ${pkg}\n\nBrief:\n${brief}`
-    );
+    const subject = `Cover Art Commission — ${project}`;
+    const message = `Project / Artist: ${project}\nPackage: ${pkg}\n\nBrief:\n${brief}`;
 
-    window.location.href = `mailto:art@decibel.band?subject=${subject}&body=${body}`;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
 
-    if (typeof showToast === 'function') {
-      showToast('Brief drafted in your email client');
+    const result = await sendSiteMail({ name, email, subject, message });
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Brief';
+
+    if (result.ok) {
+      showToast('Brief sent to Quan');
+      form.reset();
+      return;
     }
+
+    console.warn('sendSiteMail failed, falling back to mailto:', result.error);
+    showToast('Sending failed — opening your email client instead');
+    const mailtoSubject = encodeURIComponent(subject);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:art@decibel.band?subject=${mailtoSubject}&body=${body}`;
     form.reset();
   });
 });

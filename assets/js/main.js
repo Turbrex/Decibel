@@ -89,19 +89,37 @@ function initMerchTabs() {
   });
 }
 
-/* ---------- contact form (static site — no backend) ---------- */
+/* ---------- contact form: real send via send-email function, mailto fallback ---------- */
 function initContactForm() {
   const form = document.querySelector('#contact-form');
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const name = form.querySelector('#cf-name')?.value.trim();
-    showToast(name ? `Thanks, ${name} — message drafted in your email client` : 'Message drafted in your email client');
-    const subject = encodeURIComponent(form.querySelector('#cf-subject')?.value || 'Website inquiry');
-    const body = encodeURIComponent(
-      `Name: ${form.querySelector('#cf-name')?.value || ''}\nEmail: ${form.querySelector('#cf-email')?.value || ''}\n\n${form.querySelector('#cf-message')?.value || ''}`
-    );
-    window.location.href = `mailto:info@decibel.band?subject=${subject}&body=${body}`;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const name = form.querySelector('#cf-name')?.value.trim() || '';
+    const email = form.querySelector('#cf-email')?.value.trim() || '';
+    const subject = form.querySelector('#cf-subject')?.value || 'Website inquiry';
+    const message = form.querySelector('#cf-message')?.value || '';
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const result = await sendSiteMail({ name, email, subject, message });
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+
+    if (result.ok) {
+      showToast(name ? `Thanks, ${name} — message sent` : 'Message sent');
+      form.reset();
+      return;
+    }
+
+    console.warn('sendSiteMail failed, falling back to mailto:', result.error);
+    showToast('Sending failed — opening your email client instead');
+    const mailtoSubject = encodeURIComponent(subject);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:info@decibel.band?subject=${mailtoSubject}&body=${body}`;
     form.reset();
   });
 }
