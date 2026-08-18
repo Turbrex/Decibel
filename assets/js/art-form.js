@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast('Sending failed — opening your email client instead');
     const mailtoSubject = encodeURIComponent(subject);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:art@decibel.band?subject=${mailtoSubject}&body=${body}`;
+    window.location.href = `mailto:brady@decibel.band?subject=${mailtoSubject}&body=${body}`;
     form.reset();
   });
 });

@@ -8,7 +8,7 @@
 // Secrets (set these via `supabase secrets set`, never hardcode them here):
 //   SMTP_HOST  e.g. smtp.improvmx.com
 //   SMTP_PORT  e.g. 587
-//   SMTP_USER  the ImprovMX alias you're sending as, e.g. info@decibel.band
+//   SMTP_USER  the ImprovMX alias you're sending as, e.g. brady@decibel.band
 //   SMTP_PASS  the SMTP password generated in the ImprovMX dashboard
 //   MAIL_FROM  the "From" address shown to recipients, usually same as SMTP_USER
 //   MAIL_TO    where form submissions should land, e.g. your personal inbox

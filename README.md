@@ -1,1 +1,1 @@
-# Decibel
+# Decibel Band

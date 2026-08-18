@@ -269,6 +269,17 @@ section { position: relative; padding: 5rem 0; }
 
 .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+.ascii-rain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero .container,
+.hero-cta { position: relative; z-index: 1; }
+
 .hero-scratch {
   position: absolute;
   right: -10%;

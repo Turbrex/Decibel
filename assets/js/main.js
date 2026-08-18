@@ -1,4 +1,4 @@
-// DECIBEL DISTRIBUTION — shared front-end behaviour
+// DECIBEL BAND — shared front-end behaviour
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavToggle();
@@ -119,7 +119,7 @@ function initContactForm() {
     showToast('Sending failed — opening your email client instead');
     const mailtoSubject = encodeURIComponent(subject);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:info@decibel.band?subject=${mailtoSubject}&body=${body}`;
+    window.location.href = `mailto:brady@decibel.band?subject=${mailtoSubject}&body=${body}`;
     form.reset();
   });
 }
